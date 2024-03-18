@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: aviny;
+  font-style: normal;
+  font-weight: 500;
+  src: url("aviny-700.ttf") format("truetype");
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: aviny;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  width: 600px;
+}
+
+.container .header {
+  background-color: white;
+  padding: 15px 40px 30px;
+  color: black;
+  text-align: center;
+
+  border-bottom: 1px solid black;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 35px;
+}
+
+input {
+  width: 75%;
+  float: right;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  font-family: aviny;
+  background-color: black;
+  color: white;
+}
+
+.addBtn {
+  width: 25%;
+  border: none;
+  padding: 10px;
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0;
+  font-family: aviny;
+  border-right: 1px solid white;
+}
+.addBtn:hover {
+  background-color: rgb(29, 29, 29);
+  color: rgb(52, 98, 139);
+  transition: 0.5s;
+}
+
+.container.header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container .task {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  padding-right: 40px;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.task :hover {
+  background: rgb(29, 29, 29);
+  color: rgb(52, 98, 139);
+}
+
+.closeBtn {
+  display: none;
+  position: absolute;
+  left: 15px;
+  color: white;
+}
+
+ul li:hover .closeBtn {
+  display: inline-block;
+}
+.closeBtn i:hover {
+  color: #ec1d1d;
+}
+li.done {
+  background-color: #888;
+  color: black;
+  text-decoration: line-through;
+}
+
+ul li.done::before {
+  content: "";
+  width: 8px;
+  height: 20px;
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  border-color: white;
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  transform: rotate(45deg);
+}
